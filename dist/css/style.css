@@ -82,12 +82,70 @@
 .navbar .box-navbar i.ri-menu-line{
     display: none;
 }
+
+.navbar .box-navbar .navigation ul li i {
+    display: none;
+}
+
+.navbar .box-navbar .navigation i.ri-close-line {
+    display: none;
+}
+
+
+
 /* Navbar Style */
 
 /* Hero Style */
 .hero{
     width: 100%;
     min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.hero .box-hero{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    align-items: center;
+}
+
+.hero .box-hero .box:nth-child(1) h1{
+    font-size: 56px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #303030;
+}
+
+.hero .box-hero .box:nth-child(1) p{
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.hero .box-hero .box:nth-child(1) button {
+    padding: 15px 50px 15px 50px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hero .box-hero .box:nth-child(1) .btn1{
+    background-color: #8338ec;
+    color: white;
+}
+
+.hero .box-hero .box:nth-child(1) .btn1:hover{
+    background-color: #026fd2;
+}
+
+.hero .box-hero .box:nth-child(1) .btn2:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hero .box-hero .box:nth-child(2) img{
+    width: 100%;
 }
 /* Hero Style */
 
@@ -106,23 +164,56 @@
 }
 
 @media screen and (max-width: 990px) {
+    .navbar.scrolling-active .box-navbar i.ri-menu-line {
+        color: white;
+    }
+
+    .navbar .box-navbar i.ri-menu-line {
+        display: block;
+        font-size: 20px;
+    }
+
     .navbar .box-navbar .navigation{
         position: absolute;
         top: 0;
-        right: 0;
-        width: 300px;
+        right: -300px;
+        width: 250px;
         height: 100vh;
         background-color: #011627;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .box-navbar .navigation.menu-active {
+        right: 0;
+    }
+
+    .navbar .box-navbar .navigation i.ri-close-line {
+        display: block;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        transform: translateY(-50%);
+        background-color: white;
+        color: #011627;
+        border-radius: 100%;
     }
 
     .navbar .box-navbar .navigation ul {
         flex-direction: column;
         align-items: flex-end;
         gap: 30px;
+        padding: 70px 30px 0 0;
     }
 
     .navbar .box-navbar .navigation ul li a {
         color: white;
+    }
+
+    .navbar .box-navbar .navigation ul li i{
+        display: inline-block;
+        color: #8338ec;
+        margin-inline: 10px;
     }
 
     .navbar .box-navbar .navigation ul li:nth-child(5) a{
